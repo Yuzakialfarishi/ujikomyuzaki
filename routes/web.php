@@ -68,8 +68,9 @@ Route::prefix('admin')
         // Also accept /admin/home for compatibility with older links
         Route::get('home', [AdminHomeController::class, 'index']);
 
-        // CRUD Berita
+        // CRUD Berita (force parameter name to 'berita' to avoid wrong inflection)
         Route::resource('berita', AdminBeritaController::class)
+            ->parameters(['berita' => 'berita'])
             ->except(['show']);
 
         // CRUD Galeri

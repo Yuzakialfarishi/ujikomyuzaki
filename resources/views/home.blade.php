@@ -12,7 +12,6 @@
 <!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="logo">TASTY FOOD</div>
-  <button id="menu-toggle">☰</button>
   <nav>
     <ul id="nav-menu">
       <li><a href="{{ url('/') }}">HOME</a></li>
