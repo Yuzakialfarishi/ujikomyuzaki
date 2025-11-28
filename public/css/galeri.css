@@ -1,0 +1,282 @@
+/* =============================
+   RESET & BASE
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =============================
+   NAVBAR
+============================= */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar .nav-links a:hover {
+  color: #ff9900;
+}
+
+/* =============================
+   HERO GALERI
+============================= */
+.galeri-hero {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/ASET/monika-grabkowska-P1aohbiT-EY-unsplash.jpg') center/cover no-repeat;
+}
+
+/* =============================
+   CAROUSEL GALERI
+============================= */
+.carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 60px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Container untuk semua gambar */
+.carousel-images {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+/* Semua gambar disembunyikan dulu */
+.carousel-images img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+
+/* Gambar aktif ditampilkan */
+.carousel-images img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Tombol navigasi */
+.carousel .prev,
+.carousel .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+/* =============================
+   GRID GALERI
+============================= */
+.gallery-grid {
+  padding: 60px 40px;
+  background-color: #fff;
+}
+
+.gallery-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 foto per baris */
+  gap: 20px; /* jarak antar foto */
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px; /* samakan tinggi sesuai desain */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* =============================
+   FOOTER
+============================= */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 0 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff; /* Judul putih */
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff; /* Link putih */
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #fff; /* Tetap putih saat hover */
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #fff; /* Teks bawah putih */
+}
+
+/* Pastikan semua teks footer putih */
+.footer * {
+  color: #fff !important;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .galeri-hero {
+    font-size: 36px;
+    height: 250px;
+    padding: 0 20px;
+  }
+
+  .carousel img {
+    height: 350px;
+  }
+
+  .gallery-grid .grid {
+    grid-template-columns: repeat(2, 1fr); /* jadi 2 foto per baris */
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .galeri-hero {
+    font-size: 24px;
+    height: 180px;
+  }
+
+  .carousel img {
+    height: 220px;
+  }
+
+  .gallery-grid {
+    padding: 30px 20px;
+  }
+
+  .gallery-grid .grid {
+    grid-template-columns: 1fr; /* 1 foto per baris */
+    gap: 15px;
+  }
+
+  .gallery-grid img {
+    height: 180px;
+  }
+
+  .carousel .prev,
+  .carousel .next {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 40px 20px 10px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}

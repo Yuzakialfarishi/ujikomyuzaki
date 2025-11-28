@@ -1,0 +1,353 @@
+/* ===============================
+   RESET & UMUM
+================================= */
+* {
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;  
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  color: white;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ===============================
+   HERO: BERITA
+================================= */
+.berita-hero {
+  width: 100vw;
+  height: 400px;
+  background-image: url('../ASET/monika-grabkowska-P1aohbiT-EY-unsplash.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 80px 50px;
+  color: white;
+  overflow: hidden;
+}
+.berita-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.berita-hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+}
+
+/* ===============================
+   SECTION: BERITA UTAMA
+================================= */
+.berita-utama {
+  padding: 80px;
+  background-color: #f9f9f9;
+}
+.berita-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+.berita-box .image {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+.berita-box .image img {
+  width: 100%;
+  height: 220px; /* reduced from 300px to better fit layout */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.berita-box .text {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+.berita-box .text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+  line-height: 1.4;
+}
+.berita-box .text p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.berita-box .btn-black {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.berita-box .btn-black:hover {
+  background-color: #333;
+}
+
+/* ===============================
+   SECTION: BERITA LAINNYA
+================================= */
+.berita-lainnya {
+  padding: 80px 0;
+  background-color: #fff;
+}
+.berita-lainnya h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.berita-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+/* Compact horizontal card layout on wider screens */
+.berita-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px;
+  transition: transform 0.18s ease;
+}
+.berita-card:hover {
+  transform: translateY(-6px);
+}
+
+/* small thumbnail to the left */
+.berita-card img {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: 0 0 140px;
+}
+.berita-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 16px 16px 8px;
+  color: #111;
+  line-height: 1.4;
+}
+.berita-card p {
+  font-size: 12px;
+  color: #444;
+  margin: 0 16px 10px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.berita-card a {
+  font-size: 12px;
+  color: #fbb03b;
+  font-weight: 500;
+  margin-left: 16px;
+  margin-top: auto;
+  text-decoration: none;
+}
+.berita-card a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+.footer {
+  background: #111;
+  color: #fff;
+  padding-top: 40px;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+.footer-col h4 {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.footer-col.brand p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.social-icons img {
+  width: 24px;
+  margin-right: 10px;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #444;
+  font-size: 13px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 20px 40px;
+  }
+  .berita-utama {
+    padding: 40px;
+  }
+  .berita-box {
+    gap: 30px;
+    padding: 20px;
+  }
+}
+
+/* Tablet potrait & HP besar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    position: relative;
+    background: rgba(0,0,0,0.7);
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .nav-links a {
+    font-size: 12px;
+  }
+  .berita-hero {
+    height: 250px;
+    padding: 0 20px 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .berita-hero h1 {
+    font-size: 32px;
+  }
+  .berita-box {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .berita-box .image img {
+    height: 200px;
+  }
+  .berita-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .berita-card img {
+    height: 110px;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 500px) {
+  .berita-grid {
+    grid-template-columns: 1fr;
+  }
+  .berita-hero {
+    height: 200px;
+  }
+  .berita-hero h1 {
+    font-size: 26px;
+  }
+  .berita-utama {
+    padding: 20px;
+  }
+  .berita-box .image img {
+    height: 160px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer-col h4 {
+    font-size: 13px;
+  }
+  .footer-col ul li {
+    font-size: 12px;
+  }
+  .footer-bottom {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,610 @@
+/* ======================= 
+   RESET & GLOBAL STYLE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========== HEADER =========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  position: relative;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.navbar nav ul li a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+  color: #000;
+}
+
+/* =========== HERO =========== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+  height: 600px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.line-top {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #000;
+  margin-bottom: 20px;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  color: #28a745;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-text h3 {
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;   /* hanya padding kiri */
+  padding-right: 0;   /* hilangkan padding kanan */
+  height: 600px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.hero-image {
+  position: absolute;
+  top: -40px;         
+  right: -180px;      
+  width: 40%;         
+  max-width: 520px;   
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* ======================= 
+   HERO BUTTON TENTANG KAMI
+========================== */
+.btn-tentang {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.btn-tentang:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .btn-tentang {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-tentang {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* ======================= 
+   RESPONSIVE NAVBAR 
+========================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #333;
+  }
+
+  .navbar nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 99;
+  }
+
+  .navbar nav ul.active {
+    display: flex;
+  }
+
+  .navbar nav ul li a {
+    font-size: 1em;
+    color: #333;
+  }
+}
+
+/* ======================= 
+   RESPONSIVE CONTENT 
+========================== */
+@media (max-width: 768px) {
+  .about-description,
+  .about-vision,
+  .about-mission {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-description h3,
+  .about-vision h3,
+  .about-mission h3,
+  .about-description p,
+  .about-vision p,
+  .about-mission p {
+    text-align: center;
+  }
+
+  .about-description .image-column img,
+  .about-vision .image-left img,
+  .about-mission .image-right img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ======================= 
+   ABOUT SECTION TENGAH
+========================== */
+.about-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center;
+  text-align: center;    
+  max-width: 800px;      
+  margin: 0 auto 80px;   
+}
+
+.about-description h3,
+.about-description p {
+  text-align: center;
+}
+
+.about-vision,
+.about-mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* tambahan untuk about */
+.about {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+/* ======================= 
+   CATEGORIES
+========================== */
+.kategori {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  background-image: url('/ASET/monika-grabkowska-P1aohbiT-EY-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.kategori::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.kategori .card {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.kategori .card:hover {
+  transform: translateY(-5px);
+}
+
+.kategori .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.kategori .card h4 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* ===== SECTION BERITA ===== */
+.berita {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.berita-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.container-berita {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.berita-kiri {
+  flex: 1 1 500px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.berita-kiri img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.berita-konten {
+  padding: 20px;
+}
+
+.berita-konten h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.berita-konten p {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.berita-konten .btn-link {
+  font-size: 11px;
+  color: #fbb03b;
+  text-decoration: none;
+}
+
+.berita-kanan {
+  flex: 1 1 500px;
+}
+
+.berita-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.berita-item {
+  background-color: #f9f9f9;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.berita-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.berita-item div {
+  padding: 12px;
+}
+
+.berita-item h5 {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.berita-item p {
+  font-size: 10px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.berita-item .btn-link {
+  font-size: 9px;
+  color: #fbb03b;
+  text-decoration: none;
+}
+
+/* ===== RESPONSIVE BERITA ===== */
+@media (max-width: 992px) {
+  .container-berita {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .berita-kiri,
+  .berita-kanan {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .berita-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .berita-kiri img {
+    height: 200px;
+  }
+
+  .berita-item img {
+    height: 120px;
+  }
+}
+
+/* ======================= 
+   GALERI HALAMAN UTAMA
+========================== */
+.home-galeri {
+  padding: 60px 10%;
+  background-color: #f5f5f5;
+}
+
+.home-galeri h3 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.home-galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.home-galeri-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.home-galeri-grid img:hover {
+  transform: scale(1.02);
+}
+
+.btn-home-galeri {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 12px;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-home-galeri:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .home-galeri-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .home-galeri-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================= 
+   FOOTER
+========================== */
+footer {
+  background-color: #333;
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+footer .footer-content h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer .footer-content p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+footer .footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .footer-content ul li {
+  margin-bottom: 10px;
+}
+
+footer .footer-content ul li a {
+  color: #ccc;
+  font-size: 14px;
+}
+
+footer .footer-content ul li a:hover {
+  color: #f3b700;
+}
+
+footer .footer-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer .footer-social a {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+footer .footer-social a:hover {
+  color: #f3b700;
+}

@@ -1,0 +1,194 @@
+/* =============================
+   RESET & BASE
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* =============================
+   NAVBAR TRANSPARAN
+============================= */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: transparent;
+}
+
+.navbar .logo {
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+}
+
+.navbar .nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.navbar .nav-links a.active,
+.navbar .nav-links a:hover {
+  color: #ff6600;
+}
+
+/* =============================
+   HERO KONTAK
+============================= */
+.hero-kontak {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../ASET/monika-grabkowska-P1aohbiT-EY-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* =============================
+   FORM KONTAK
+============================= */
+.kontak-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.kontak-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.kontak-form input,
+.kontak-form textarea {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.kontak-form textarea {
+  grid-column: 2 / 3;
+  min-height: 150px;
+}
+
+.kontak-form button {
+  grid-column: 1 / 3;
+  background: #000;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.kontak-form button:hover {
+  background: #333;
+}
+
+/* =============================
+   INFO KONTAK
+============================= */
+.kontak-info {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.kontak-info .info-item {
+  text-align: center;
+  max-width: 200px;
+}
+
+.kontak-info .info-item img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.kontak-info .info-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.kontak-info .info-item p {
+  font-size: 14px;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .hero-kontak {
+    font-size: 32px;
+    height: 200px;
+  }
+
+  .kontak-form {
+    grid-template-columns: 1fr;
+  }
+
+  .kontak-form textarea {
+    grid-column: 1 / 2;
+  }
+
+  .kontak-form button {
+    grid-column: 1 / 2;
+  }
+
+  .kontak-info {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.maps-section {
+    width: 100%;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.maps-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.maps-wrapper {
+    max-width: 1050px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}

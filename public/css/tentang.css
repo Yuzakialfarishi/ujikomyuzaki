@@ -1,0 +1,392 @@
+/* ===============================
+   HERO TENTANG KAMI
+================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tentang-hero {
+  width: 100%;
+  height: 400px;
+  background-image: url("/ASET/monika-grabkowska-P1aohbiT-EY-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* teks di tengah */
+  text-align: center;        
+  padding: 0 20px;
+  color: white;
+  overflow: hidden;
+}
+
+.tentang-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.tentang-hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+}
+
+
+/* ======================
+   NAVBAR
+====================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(0,0,0,0.45); /* slightly visible to avoid content shifting under it */
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #ff9900;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* ===============================
+   SECTION: DESKRIPSI UMUM
+================================= */
+.tentang-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* biar rata tengah */
+  padding: 80px;
+  gap: 60px;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.tentang-description .text-column {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.tentang-description h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tentang-description p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.tentang-description p.bold {
+  font-weight: 600;
+  color: #111;
+}
+
+.tentang-description .image-column {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tentang-description .image-column img {
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* ===============================
+   SECTION: VISI
+================================= */
+.tentang-vision {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 80px;
+  gap: 60px;
+  background-color: #fff;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.tentang-vision .image-column {
+  flex: 1 1 400px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tentang-vision .image-column img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tentang-vision .text-column {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.tentang-vision h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tentang-vision p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* ===============================
+   SECTION: MISI
+================================= */
+.tentang-mission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 60px; /* reduce horizontal padding to avoid overflow */
+  gap: 40px;
+  background-color: #fff;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.tentang-mission .text-left {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.tentang-mission .text-left h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tentang-mission .text-left p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.tentang-mission .image-right {
+  flex: 0 0 300px; /* slightly smaller to avoid horizontal scroll */
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tentang-mission .image-right img {
+  width: 100%;
+  height: auto;
+  max-height: 240px; /* shorter image */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ensure content doesn't hide under fixed navbar: add top padding to body sections */
+.tentang-hero,
+.tentang-description,
+.tentang-vision,
+.tentang-mission {
+  padding-top: 80px; /* matches navbar height */
+}
+
+/* Prevent horizontal scroll caused by fixed widths on small screens */
+html, body {
+  overflow-x: hidden;
+}
+
+
+/* ====== FOOTER ====== */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 0 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer-links a:hover {
+  color: #ccc;
+}
+
+.footer-socials a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 992px) {
+  .tentang-hero {
+    height: 300px;
+  }
+  .tentang-hero h1 {
+    font-size: 36px;
+  }
+
+  .tentang-description,
+  .tentang-vision,
+  .tentang-mission {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .tentang-mission .image-right img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tentang-hero {
+    height: 250px;
+  }
+  .tentang-hero h1 {
+    font-size: 28px;
+  }
+
+  .tentang-description,
+  .tentang-vision,
+  .tentang-mission {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .tentang-description .image-column img,
+  .tentang-vision .image-column img,
+  .tentang-mission .image-right img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    padding: 40px 20px 10px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
