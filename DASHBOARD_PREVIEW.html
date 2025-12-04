@@ -1,0 +1,358 @@
+<!-- Dashboard Preview HTML -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin Preview - TastyFood</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, currentColor 0%, transparent 100%);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .stat-card.berita::before {
+            background: linear-gradient(90deg, #3b82f6 0%, transparent 100%);
+        }
+
+        .stat-card.galeri::before {
+            background: linear-gradient(90deg, #10b981 0%, transparent 100%);
+        }
+
+        .stat-card.kontak::before {
+            background: linear-gradient(90deg, #f59e0b 0%, transparent 100%);
+        }
+
+        .stat-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .stat-info h3 {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card.berita .stat-icon {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+        }
+
+        .stat-card.galeri .stat-icon {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            color: #065f46;
+        }
+
+        .stat-card.kontak .stat-icon {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+        }
+
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .stat-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .stat-footer a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .stat-footer a:hover {
+            color: #1f2937;
+        }
+
+        .actions-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 24px;
+        }
+
+        .actions-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .action-btn {
+            padding: 16px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .action-btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        .action-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .action-btn-success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .action-btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .action-btn-info {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        }
+
+        .action-btn-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+        }
+
+        .action-btn-warning {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .action-btn-warning:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .welcome-alert {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 20px;
+            color: #1e40af;
+            display: flex;
+            gap: 16px;
+        }
+
+        .welcome-alert h5 {
+            margin-bottom: 8px;
+            color: #1e40af;
+        }
+
+        .welcome-alert p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .actions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .action-btn {
+                padding: 14px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-chart-line" style="color: #3b82f6;"></i> Dashboard Admin</h1>
+        <p class="subtitle">Selamat datang di panel administrasi TastyFood</p>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <!-- Card Berita -->
+            <div class="stat-card berita">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <h3>Total Berita</h3>
+                        <div class="stat-number">12</div>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                </div>
+                <div class="stat-footer">
+                    <a href="#"><i class="fas fa-arrow-right"></i> Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- Card Galeri -->
+            <div class="stat-card galeri">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <h3>Total Galeri</h3>
+                        <div class="stat-number">8</div>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                </div>
+                <div class="stat-footer">
+                    <a href="#"><i class="fas fa-arrow-right"></i> Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- Card Pesan -->
+            <div class="stat-card kontak">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <h3>Pesan Masuk</h3>
+                        <div class="stat-number">15</div>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+                <div class="stat-footer">
+                    <a href="#"><i class="fas fa-arrow-right"></i> Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="actions-section">
+            <div class="actions-title">
+                <i class="fas fa-flash" style="color: #f59e0b; margin-right: 8px;"></i>Aksi Cepat
+            </div>
+            <div class="actions-grid">
+                <a href="#" class="action-btn action-btn-primary">
+                    <i class="fas fa-plus"></i> Tambah Berita
+                </a>
+                <a href="#" class="action-btn action-btn-success">
+                    <i class="fas fa-plus"></i> Tambah Galeri
+                </a>
+                <a href="#" class="action-btn action-btn-info">
+                    <i class="fas fa-plus"></i> Tambah Pesan
+                </a>
+                <a href="#" class="action-btn action-btn-warning">
+                    <i class="fas fa-download"></i> Export Pesan
+                </a>
+            </div>
+        </div>
+
+        <!-- Welcome Message -->
+        <div class="welcome-alert">
+            <div class="alert-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <div>
+                <h5>Selamat Datang di Dashboard</h5>
+                <p>
+                    Kelola seluruh konten TastyFood dari panel administrasi ini. 
+                    Anda dapat menambah, mengedit, dan menghapus berita, galeri, serta pesan kontak dengan mudah.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

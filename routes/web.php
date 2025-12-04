@@ -8,6 +8,9 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\KontakController;
 
+// Controllers Auth
+use App\Http\Controllers\AuthController;
+
 // Controllers Admin
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminBeritaController;
@@ -51,6 +54,20 @@ Route::post('/kontak/kirim', [KontakController::class, 'store'])
     ->name('kontak.store');
 
 
+/*
+|--------------------------------------------------------------------------
+| AUTHENTICATION ROUTES
+|--------------------------------------------------------------------------
+*/
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+});
+
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +75,7 @@ Route::post('/kontak/kirim', [KontakController::class, 'store'])
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')
+    ->middleware('auth')
     ->name('admin.')
     ->group(function () {
 
